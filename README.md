@@ -1,16 +1,5 @@
 # carrot
 
-A new Flutter project.
+본 프로젝트에 앞서 당근마켓 ui 클론코딩 4일짜리 프로젝트입니다.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+특히 폴더구조와 테마에 대한 부분을 그대로 차용할 예정입니다.
