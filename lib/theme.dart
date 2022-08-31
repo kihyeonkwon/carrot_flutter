@@ -15,6 +15,8 @@ AppBarTheme appTheme() {
   return AppBarTheme(
     centerTitle: false,
     color: Colors.white,
+    iconTheme: IconThemeData(color: Colors.black),
+    // actionsIconTheme: IconThemeData(color: Colors.black),
     elevation: 0.0,
     titleTextStyle: GoogleFonts.nanumGothic(
         fontSize: 15, fontWeight: FontWeight.bold, color: Colors.black),
