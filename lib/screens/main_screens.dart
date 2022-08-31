@@ -1,3 +1,8 @@
+import 'package:carrot/screens/chatting/chatting_screen.dart';
+import 'package:carrot/screens/home/home_screen.dart';
+import 'package:carrot/screens/my_carrot/my_carrot_screen.dart';
+import 'package:carrot/screens/near_me/near_me_screen.dart';
+import 'package:carrot/screens/neighborhood_life/neighborhood_life_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,29 +19,26 @@ class _MainScreensState extends State<MainScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: _selectedIndex, children: [
-        Container(
-            color: Colors.orange,
-            child: const Center(
-                child: Text('Indexed Stack 1',
-                    style: TextStyle(fontSize: 20, color: Colors.black)))),
-        Container(
-            color: Colors.redAccent[100],
-            child: const Center(
-                child: Text('Indexed Stack 2',
-                    style: TextStyle(fontSize: 20, color: Colors.black)))),
-        Container(
-            color: Colors.orange,
-            child: const Center(
-                child: Text('Indexed Stack 3',
-                    style: TextStyle(fontSize: 20, color: Colors.black))))
+      body: IndexedStack(index: _selectedIndex, children: const [
+        HomeScreen(),
+        NeighborhoodLifeScreen(),
+        NearMeScreen(),
+        ChattingScreen(),
+        MyCarrotScreen(),
       ]),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: '홈'),
           BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.square_on_square), label: '동네생활'),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.placemark), label: '내 근처'),
+          BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.chat_bubble), label: '채팅'),
-          BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: '홈')
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.person), label: '나의 당근'),
         ],
         onTap: (index) {
           setState(() {
