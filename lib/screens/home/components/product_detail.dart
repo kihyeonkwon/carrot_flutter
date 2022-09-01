@@ -1,4 +1,5 @@
 import 'package:carrot/models/product.dart';
+import 'package:carrot/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
@@ -13,20 +14,31 @@ class ProductDetail extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Visibility(
-            visible: product.commentsCount > 0,
-            child: _buildIcons(
-              product.commentsCount,
-              CupertinoIcons.chat_bubble_2,
-            ),
-          ),
-          const SizedBox(width: 8.0),
-          Visibility(
-              visible: product.heartCount > 0,
-              child: _buildIcons(
-                product.heartCount,
-                CupertinoIcons.heart,
-              ))
+          Text(product.title, style: textTheme().bodyText1),
+          const SizedBox(height: 4.0),
+          Text('${product.address} ${product.publishedAt}'),
+          const SizedBox(height: 4.0),
+          Text('${numberFormat(product.price)}원', style: textTheme().headline2),
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Visibility(
+                visible: product.commentsCount > 0,
+                child: _buildIcons(
+                  product.commentsCount,
+                  CupertinoIcons.chat_bubble_2,
+                ),
+              ),
+              const SizedBox(width: 8.0),
+              Visibility(
+                  visible: product.heartCount > 0,
+                  child: _buildIcons(
+                    product.heartCount,
+                    CupertinoIcons.heart,
+                  ))
+            ],
+          )
         ],
       ),
     );

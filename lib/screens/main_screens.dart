@@ -28,6 +28,8 @@ class _MainScreensState extends State<MainScreens> {
       ]),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black54,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: '홈'),

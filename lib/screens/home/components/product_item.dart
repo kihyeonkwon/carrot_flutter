@@ -1,4 +1,5 @@
 import 'package:carrot/models/product.dart';
+import 'package:carrot/screens/home/components/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class ProductItem extends StatelessWidget {
@@ -16,11 +17,12 @@ class ProductItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             child: Image.network(
               product.urlToImage,
-              width: 15,
+              width: 115,
               height: 115,
               fit: BoxFit.cover,
             )),
-        const SizedBox(width: 16)
+        const SizedBox(width: 16),
+        ProductDetail(product: product)
       ]),
     );
   }
