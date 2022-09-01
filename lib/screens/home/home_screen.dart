@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Row(children: const [
-            Text('가산'),
+            Text('서초동'),
             SizedBox(
               width: 4.0,
             ),
