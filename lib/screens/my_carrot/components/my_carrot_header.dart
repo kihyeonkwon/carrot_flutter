@@ -1,3 +1,4 @@
+import 'package:carrot/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -32,7 +33,44 @@ class MyCarrotHeader extends StatelessWidget {
 }
 
 Widget _buildProfileRow() {
-  return Container(color: Colors.redAccent[100], height: 60);
+  return Row(
+    children: [
+      Stack(
+        children: [
+          SizedBox(
+              width: 65,
+              height: 65,
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(32.5),
+                  child: Image.network('https://placeimg.com/200/100/people',
+                      fit: BoxFit.cover))),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.grey[100]),
+              child: Icon(Icons.camera_alt_outlined, size: 15),
+            ),
+          ),
+        ],
+      ),
+      SizedBox(
+        width: 16,
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('developer', style: textTheme().headline2),
+          SizedBox(height: 10),
+          Text('서초동 #00912')
+        ],
+      )
+    ],
+  );
 }
 
 Widget _buildProfileButton() {
