@@ -74,7 +74,22 @@ Widget _buildProfileRow() {
 }
 
 Widget _buildProfileButton() {
-  return Container(color: Colors.blue[100], height: 45);
+  return InkWell(
+      onTap: () {},
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.black,
+              width: 1.0,
+            ),
+            borderRadius: BorderRadius.circular(16)),
+        height: 45,
+        child: Center(
+            child: Text(
+          '프로필 보기',
+          style: textTheme().subtitle1,
+        )),
+      ));
 }
 
 Widget _buildRoundTextButton(String title, IconData iconData) {
