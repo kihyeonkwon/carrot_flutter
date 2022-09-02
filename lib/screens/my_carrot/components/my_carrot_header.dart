@@ -93,5 +93,24 @@ Widget _buildProfileButton() {
 }
 
 Widget _buildRoundTextButton(String title, IconData iconData) {
-  return Container(color: Colors.orange[100], height: 60, width: 60);
+  return Column(children: [
+    Container(
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        color: Colors.white,
+        border: Border.all(color: Colors.orange, width: 0.5),
+      ),
+      child: Icon(
+        iconData,
+        color: Colors.orange,
+      ),
+    ),
+    SizedBox(height: 10),
+    Text(
+      title,
+      style: textTheme().subtitle1,
+    )
+  ]);
 }
